@@ -616,129 +616,243 @@ body {
 
 /* ===== تنسيق الـ Hero للشاشات الكبيرة ===== */
 .hero {
+
     position: relative;
-    padding-top: 120px; /* مسافة مناسبة للنافبار الأساسي */
+
+    padding-top: 160px; /* زودنا المسافة من فوق عشان النافبار الثابت */
+
     min-height: 85vh;
+
     background: url('hero-bg.jpg') no-repeat center top / cover;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
     padding-left: 20px;
+
     padding-right: 20px;
+
 }
 
-/* ===== التجاوب مع شاشات الموبايل (Responsive Design) ===== */
 @media (max-width: 768px) {
-    /* تصحيح الحاوية العامة */
+
+    /* تصحيح الحاوية */
+
     .container {
+
         width: 100% !important;
+
         max-width: 100% !important;
+
         padding: 0 15px !important;
+
     }
 
-    /* ضبط النافبار للموبايل (مستخدمن .navbar عشان يتطابق مع الـ HTML) */
-    .navbar {
+
+
+    /* ضبط النافبار عشان يكون مضغوط ومرتب ومنسق في شاشات الموبايل الصغيرة */
+
+    .header {
+
         position: fixed;
+
         top: 0;
+
         left: 0;
+
         width: 100%;
+
     }
+
+
 
     .nav-container {
+
         padding: 8px 12px;
-        flex-direction: row;
+
+        flex-direction: row; /* نخليهم جنب بعض عشان المساحة */
+
         flex-wrap: wrap;
+
         justify-content: space-between;
+
         align-items: center;
+
         gap: 8px;
+
     }
+
+
 
     .logo {
+
         font-size: 18px;
+
     }
 
-    /* اللينكات تنزل في سطر لوحدها تحت بشكل شيك */
+
+
     .nav-links {
+
         gap: 10px;
-        order: 3; 
+
+        order: 3; /* ننزل اللينكات تحت في سطر صغير */
+
         width: 100%;
+
         justify-content: center;
-        padding-top: 6px;
+
+        padding-top: 5px;
+
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+
     }
+
+
 
     .nav-links li a {
+
         font-size: 12px;
+
     }
+
+
 
     .nav-actions {
+
         gap: 8px;
+
         order: 2;
+
     }
+
+
 
     .nav-actions .nav-cta {
+
         padding: 6px 14px;
+
         font-size: 11px;
+
     }
+
+
 
     .lang-btn {
+
         padding: 4px 10px;
+
         font-size: 11px;
+
     }
 
-    /* مساحة الـ Hero على الموبايل عشان النافبار أبو سطرين ما يغطيش الكلام */
+
+
+    /* مساحة الـ Hero تتظبط بدقة عشان مفيش حاجة تغطي الكلام */
+
     .hero {
-        padding-top: 160px !important; 
+
+        padding-top: 150px !important; /* مساحة مناسبة جداً للنافبار المضغوط الجديد */
+
         min-height: 75vh !important;
+
         padding-left: 15px;
+
         padding-right: 15px;
+
     }
+
+
 
     .hero-content h1 {
+
         font-size: 1.6rem !important;
+
         line-height: 1.3;
+
     }
+
+
 
     .hero-content p {
+
         font-size: 0.9rem !important;
+
         margin-bottom: 20px;
+
     }
+
+
 
     .hero-btns {
+
         flex-direction: column;
+
         width: 100%;
+
         gap: 10px;
+
     }
+
+
 
     .hero-btns .btn {
+
         width: 100%;
+
         padding: 10px 20px;
+
         font-size: 0.95rem;
+
         text-align: center;
+
     }
+
+
 
     /* باقي الأقسام للموبايل */
+
     .services-grid {
+
         grid-template-columns: 1fr !important;
+
         gap: 20px;
+
     }
+
+
 
     .video-box, 
+
     .photo-item {
+
         width: 100% !important;
+
     }
+
+
 
     .video-box video, 
+
     .photo-item img {
+
         height: 220px;
+
     }
 
+
+
     .contact-container,
+
     .about-content {
+
         padding: 20px 15px;
+
         margin: 0 10px;
+
     }
-}
-    }
-}
