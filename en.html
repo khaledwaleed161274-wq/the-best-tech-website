@@ -238,39 +238,43 @@
         <p>All rights reserved &copy; 2026 - The Best technology Company for Finishing & Decor</p>
     </footer>
 
-    <!-- JavaScript code for WhatsApp redirect -->
-    <script>
+   <script>
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // منع إعادة تحميل الصفحة
 
+            // استخراج القيم المدخلة
             const name = document.getElementById('clientName').value;
             const phone = document.getElementById('clientPhone').value;
             const service = document.getElementById('clientService').value;
             const message = document.getElementById('clientMessage').value;
 
+            // رقم الواتساب الخاص بك (تأكد من كتابة الرقم بالكود الدولي الصحيح بدون علامة +)
             const myPhoneNumber = "201144447012"; 
 
-            const whatsappMessage = `*New Quote Request from Website*%0a` +
+            // صياغة نص الرسالة
+            const whatsappMessage = `*طلب مقايسة جديدة من موقع The Best*%0a` +
                                     `----------------------------------%0a` +
-                                    `👤 *Name:* ${name}%0a` +
-                                    `📞 *Phone:* ${phone}%0a` +
-                                    `🛠 *Service:* ${service}%0a` +
-                                    `💬 *Details:* ${message}`;
+                                    `👤 *الاسم:* ${name}%0a` +
+                                    `📞 *الهاتف:* ${phone}%0a` +
+                                    `🛠 *الخدمة:* ${service}%0a` +
+                                    `💬 *التفاصيل:* ${message}`;
 
+            // فتح تطبيق/موقع الواتساب بالرسالة الجاهزة
             const whatsappURL = `https://wa.me/${myPhoneNumber}?text=${whatsappMessage}`;
             window.open(whatsappURL, '_blank');
         });
     </script>
 
+   <!-- كود JavaScript لتفعيل تصغير الهيدر عند السكرول -->
     <script>
-        const videos = document.querySelectorAll('.video-box video');
-        videos.forEach(video => {
-            video.playbackRate = 0.8;
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     </script>
-   
-</body>
-</html>
-
 </body>
 </html>
