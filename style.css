@@ -630,3 +630,13 @@ body {
         background-position: center center !important;
     }
 }
+
+/* ===== حل مشكلة نزول ونط الكلمات على الموبايل ===== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        white-space: normal !important; /* السماح للكلمات بالالتفاف الطبيعي عشان ما تطلعش بره الشاشة */
+        font-size: 1.8rem !important;     /* تصغير حجم الخط شوية عشان يتناسب مع عرض الموبايل */
+        line-height: 1.4 !important;      /* مسافة مريحة بين السطور */
+        word-break: normal;
+    }
+}
