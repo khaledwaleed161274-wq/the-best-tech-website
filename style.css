@@ -52,114 +52,192 @@ body {
 
 /* ===== تنسيق الـ Navbar الاحترافي ===== */
 .navbar {
+
     width: 100%;
-    position: absolute; /* أو fixed لو عايزه يفضل ثابت فوق وأنت نازل بالصفحة */
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: rgba(30, 39, 46, 0.75); /* خلفية شفافة فخمة عشان الكلام يظهر بوضوح */
-    backdrop-filter: blur(10px); /* تأثير الزجاج الممشّي الحديث */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: transparent;
+
 }
+
+
 
 .nav-container {
+
     width: 100%;
+
     max-width: 1300px;
+
     margin: 0 auto;
+
     padding: 15px 30px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
 }
 
-/* اللوجو أو اسم الشركة */
+
+
 .logo {
+
     font-size: 24px;
+
     font-weight: 800;
+
     color: #ffffff;
+
     text-decoration: none;
+
 }
+
+
 
 .logo span {
+
     color: var(--primary-color);
+
 }
 
-/* قائمة اللينكات */
+
+
 .nav-links {
+
     list-style: none;
+
     display: flex;
+
     gap: 30px;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+
 }
+
+
 
 .nav-links li a {
+
     color: #ffffff;
+
     text-decoration: none;
+
     font-size: 16px;
+
     font-weight: 600;
+
     transition: color 0.3s ease;
+
 }
+
+
 
 .nav-links li a:hover {
+
     color: var(--primary-color);
+
 }
 
-/* الأزرار والاجراءات (زرار اطلب المقايسة + اللغة) */
+
+
 .nav-actions {
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
 }
+
+
 
 .nav-actions .nav-cta {
+
     background-color: var(--primary-color);
+
     color: var(--white);
+
     padding: 10px 22px;
+
     border-radius: 25px;
+
     text-decoration: none;
+
     font-weight: 700;
+
     font-size: 14px;
+
     display: inline-block;
+
     box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+
     animation: buttonPulse 2s infinite;
+
     transition: transform 0.3s ease, background-color 0.3s ease;
+
 }
 
-/* أنيميشن زرار اطلب المقايسة */
+
+
 @keyframes buttonPulse {
+
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
+
     70% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(243, 156, 18, 0); }
+
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+
 }
+
+
 
 .nav-actions .nav-cta:hover {
+
     transform: translateY(-2px) scale(1.08);
+
     background-color: var(--primary-hover);
+
     animation: none;
+
 }
 
-/* زر تغيير اللغة */
+
+
 .lang-btn {
+
     background: rgba(255, 255, 255, 0.08);
+
     border: 1.5px solid rgba(255, 255, 255, 0.2);
+
     color: var(--white);
+
     padding: 7px 16px;
+
     border-radius: 20px;
+
     font-size: 14px;
+
     font-weight: 700;
+
     cursor: pointer;
+
     display: flex;
+
     align-items: center;
+
     gap: 6px;
+
     transition: all 0.3s ease;
+
 }
+
+
 
 .lang-btn:hover {
+
     background-color: var(--primary-color);
+
     border-color: var(--primary-color);
-    color: var(--secondary-color);
 }
 
 /* ===== قسم الرئيسية (Hero) ===== */
