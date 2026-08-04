@@ -52,191 +52,98 @@ body {
 
 /* ===== تنسيق الـ Navbar الاحترافي ===== */
 .navbar {
-
     width: 100%;
-
     background: transparent;
-
 }
-
-
 
 .nav-container {
-
     width: 100%;
-
     max-width: 1300px;
-
     margin: 0 auto;
-
     padding: 15px 30px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
 }
-
-
 
 .logo {
-
     font-size: 24px;
-
     font-weight: 800;
-
     color: #ffffff;
-
     text-decoration: none;
-
 }
-
-
 
 .logo span {
-
     color: var(--primary-color);
-
 }
-
-
 
 .nav-links {
-
     list-style: none;
-
     display: flex;
-
     gap: 30px;
-
 }
-
-
 
 .nav-links li a {
-
     color: #ffffff;
-
     text-decoration: none;
-
     font-size: 16px;
-
     font-weight: 600;
-
     transition: color 0.3s ease;
-
 }
-
-
 
 .nav-links li a:hover {
-
     color: var(--primary-color);
-
 }
-
-
 
 .nav-actions {
-
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
 }
-
-
 
 .nav-actions .nav-cta {
-
     background-color: var(--primary-color);
-
     color: var(--white);
-
     padding: 10px 22px;
-
     border-radius: 25px;
-
     text-decoration: none;
-
     font-weight: 700;
-
     font-size: 14px;
-
     display: inline-block;
-
     box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
-
     animation: buttonPulse 2s infinite;
-
     transition: transform 0.3s ease, background-color 0.3s ease;
-
 }
-
-
 
 @keyframes buttonPulse {
-
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
-
     70% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(243, 156, 18, 0); }
-
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
-
 }
-
-
 
 .nav-actions .nav-cta:hover {
-
     transform: translateY(-2px) scale(1.08);
-
     background-color: var(--primary-hover);
-
     animation: none;
-
 }
-
-
 
 .lang-btn {
-
     background: rgba(255, 255, 255, 0.08);
-
     border: 1.5px solid rgba(255, 255, 255, 0.2);
-
     color: var(--white);
-
     padding: 7px 16px;
-
     border-radius: 20px;
-
     font-size: 14px;
-
     font-weight: 700;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
-
     gap: 6px;
-
     transition: all 0.3s ease;
-
 }
 
-
-
 .lang-btn:hover {
-
     background-color: var(--primary-color);
-
     border-color: var(--primary-color);
 }
 
@@ -694,243 +601,127 @@ body {
 
 /* ===== تنسيق الـ Hero للشاشات الكبيرة ===== */
 .hero {
-
     position: relative;
-
     padding-top: 160px; /* زودنا المسافة من فوق عشان النافبار الثابت */
-
     min-height: 85vh;
-
     background: url('hero-bg.jpg') no-repeat center top / cover;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     padding-left: 20px;
-
     padding-right: 20px;
-
 }
 
 @media (max-width: 768px) {
-
     /* تصحيح الحاوية */
-
     .container {
-
         width: 100% !important;
-
         max-width: 100% !important;
-
         padding: 0 15px !important;
-
     }
-
-
 
     /* ضبط النافبار عشان يكون مضغوط ومرتب ومنسق في شاشات الموبايل الصغيرة */
-
     .header {
-
         position: fixed;
-
         top: 0;
-
         left: 0;
-
         width: 100%;
-
     }
-
-
 
     .nav-container {
-
         padding: 8px 12px;
-
         flex-direction: row; /* نخليهم جنب بعض عشان المساحة */
-
         flex-wrap: wrap;
-
         justify-content: space-between;
-
         align-items: center;
-
         gap: 8px;
-
     }
-
-
 
     .logo {
-
         font-size: 18px;
-
     }
-
-
 
     .nav-links {
-
         gap: 10px;
-
         order: 3; /* ننزل اللينكات تحت في سطر صغير */
-
         width: 100%;
-
         justify-content: center;
-
         padding-top: 5px;
-
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-
     }
-
-
 
     .nav-links li a {
-
-        font-size: 12px;
-
+       font-size: 12px;
     }
-
-
 
     .nav-actions {
-
         gap: 8px;
-
         order: 2;
-
     }
-
-
 
     .nav-actions .nav-cta {
-
         padding: 6px 14px;
-
         font-size: 11px;
-
     }
-
-
 
     .lang-btn {
-
         padding: 4px 10px;
-
         font-size: 11px;
-
     }
-
-
 
     /* مساحة الـ Hero تتظبط بدقة عشان مفيش حاجة تغطي الكلام */
-
     .hero {
-
         padding-top: 150px !important; /* مساحة مناسبة جداً للنافبار المضغوط الجديد */
-
         min-height: 75vh !important;
-
         padding-left: 15px;
-
         padding-right: 15px;
-
     }
-
-
 
     .hero-content h1 {
-
         font-size: 1.6rem !important;
-
         line-height: 1.3;
-
     }
-
-
 
     .hero-content p {
 
         font-size: 0.9rem !important;
-
         margin-bottom: 20px;
-
     }
-
-
-
+    
     .hero-btns {
-
         flex-direction: column;
-
         width: 100%;
-
         gap: 10px;
-
     }
-
-
 
     .hero-btns .btn {
-
         width: 100%;
-
         padding: 10px 20px;
-
         font-size: 0.95rem;
-
         text-align: center;
-
     }
-
-
 
     /* باقي الأقسام للموبايل */
-
     .services-grid {
-
         grid-template-columns: 1fr !important;
-
         gap: 20px;
-
     }
-
-
 
     .video-box, 
-
     .photo-item {
-
         width: 100% !important;
-
     }
 
-
-
     .video-box video, 
-
     .photo-item img {
-
         height: 220px;
-
     }
 
 
 
     .contact-container,
-
     .about-content {
-
         padding: 20px 15px;
-
         margin: 0 10px;
-
     }
