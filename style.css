@@ -50,9 +50,16 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== تنسيق الـ Navbar الاحترافي ===== */
 .navbar {
     width: 100%;
-    background: transparent;
+    position: absolute; /* أو fixed لو عايزه يفضل ثابت فوق وأنت نازل بالصفحة */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(30, 39, 46, 0.75); /* خلفية شفافة فخمة عشان الكلام يظهر بوضوح */
+    backdrop-filter: blur(10px); /* تأثير الزجاج الممشّي الحديث */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -65,6 +72,7 @@ body {
     align-items: center;
 }
 
+/* اللوجو أو اسم الشركة */
 .logo {
     font-size: 24px;
     font-weight: 800;
@@ -76,10 +84,14 @@ body {
     color: var(--primary-color);
 }
 
+/* قائمة اللينكات */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li a {
@@ -94,6 +106,7 @@ body {
     color: var(--primary-color);
 }
 
+/* الأزرار والاجراءات (زرار اطلب المقايسة + اللغة) */
 .nav-actions {
     display: flex;
     align-items: center;
@@ -114,6 +127,7 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* أنيميشن زرار اطلب المقايسة */
 @keyframes buttonPulse {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
     70% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(243, 156, 18, 0); }
@@ -126,6 +140,7 @@ body {
     animation: none;
 }
 
+/* زر تغيير اللغة */
 .lang-btn {
     background: rgba(255, 255, 255, 0.08);
     border: 1.5px solid rgba(255, 255, 255, 0.2);
@@ -144,6 +159,7 @@ body {
 .lang-btn:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* ===== قسم الرئيسية (Hero) ===== */
