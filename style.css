@@ -610,57 +610,79 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-
-/* ==========================================
-   إعدادات التجاوب الشاملة للشاشات الصغيرة والموبايل
-   ========================================== */
 @media (max-width: 768px) {
-    /* تصحيح الحاوية العامة عشان تملا الشاشة بمسافات أمان مظبوطة */
+    /* تصحيح الحاوية */
     .container {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 15px !important;
     }
 
-    /* ضبط شريط التنقل (Navbar) للموبايل */
+    /* ضبط النافبار عشان يكون مضغوط ومرتب ومنسق في شاشات الموبايل الصغيرة */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
     .nav-container {
-        padding: 12px 15px;
-        flex-direction: column;
-        gap: 12px;
+        padding: 8px 12px;
+        flex-direction: row; /* نخليهم جنب بعض عشان المساحة */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 18px;
     }
 
     .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
+        gap: 10px;
+        order: 3; /* ننزل اللينكات تحت في سطر صغير */
+        width: 100%;
         justify-content: center;
+        padding-top: 5px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links li a {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .nav-actions {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
+        order: 2;
     }
 
-    /* تعديل مسافة قسم الـ Hero فوق عشان النافبار في الموبايل بيبقى أطول (متعدد السطور) */
+    .nav-actions .nav-cta {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+
+    .lang-btn {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+
+    /* مساحة الـ Hero تتظبط بدقة عشان مفيش حاجة تغطي الكلام */
     .hero {
-        padding-top: 220px !important;
+        padding-top: 150px !important; /* مساحة مناسبة جداً للنافبار المضغوط الجديد */
         min-height: 75vh !important;
         padding-left: 15px;
         padding-right: 15px;
     }
 
     .hero-content h1 {
-        font-size: 1.9rem !important;
-        line-height: 1.4;
+        font-size: 1.6rem !important;
+        line-height: 1.3;
     }
 
     .hero-content p {
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 20px;
     }
 
     .hero-btns {
@@ -671,47 +693,30 @@ body {
 
     .hero-btns .btn {
         width: 100%;
+        padding: 10px 20px;
+        font-size: 0.95rem;
         text-align: center;
     }
 
-    /* شبكة الخدمات تظهر كارت تحت كارت (Column واحد) */
+    /* باقي الأقسام للموبايل */
     .services-grid {
         grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
-    /* المعرض والفيديوهات تملى الشاشة بشكل منسق */
-    .video-container, 
-    .my-gallery {
         gap: 20px;
     }
 
     .video-box, 
     .photo-item {
         width: 100% !important;
-        max-width: 100%;
     }
 
     .video-box video, 
     .photo-item img {
-        height: 240px;
+        height: 220px;
     }
 
-    /* نموذج التواصل يتاقلم مع عرض شاشة الموبايل */
     .contact-container,
     .about-content {
         padding: 20px 15px;
         margin: 0 10px;
-    }
-}
-
-/* شاشات الموبايلات الصغيرة جداً (أقل من 480px) */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .logo {
-        font-size: 20px;
     }
 }
