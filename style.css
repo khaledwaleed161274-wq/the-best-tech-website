@@ -598,9 +598,15 @@ body {
     }
 }
 
-/* حل مشكلة تداخل الـ Navbar الثابت مع محتوى الصفحة */
 .hero {
-    padding-top: 180px !important; /* بتزق محتوى الـ Hero لتحت عشان ما يتغطاش بالـ Navbar */
-    height: auto !important;       /* عشان الـ height الـ 100vh ما يعوجش المحتوى لو زاد */
-    min-height: 100vh;
+    position: relative;
+    padding-top: 160px; /* زودنا المسافة من فوق عشان النافبار الثابت */
+    min-height: 85vh;
+    background: url('hero-bg.jpg') no-repeat center top / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
