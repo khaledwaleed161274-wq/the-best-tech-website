@@ -599,9 +599,12 @@ body {
 }
 
 .hero {
-    padding-top: 135px !important;
-    height: auto !important;
-    min-height: 90vh;
-    background-size: cover !important;
+    padding-top: 130px !important;         /* المسافة فوق */
+    min-height: 90vh;                      /* ارتفاع القسم */
+    background-image: url('hero-bg.jpg') !important; /* تأكد من اسم الصورة ومسارها */
+    background-repeat: no-repeat !important;
     background-position: center center !important;
+    background-attachment: scroll !important;
+    /* الحل السحري هنا */
+    background-size: 100% 100% !important; 
 }
