@@ -8,9 +8,9 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header" id="mainHeader">
         <nav class="navbar">
-            <header class="header">
+            <div class="nav-container">
 
                 <a href="en.html" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
                 <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
@@ -255,6 +255,14 @@
             // فتح تطبيق/موقع الواتساب بالرسالة الجاهزة
             const whatsappURL = `https://wa.me/${myPhoneNumber}?text=${whatsappMessage}`;
             window.open(whatsappURL, '_blank');
+        });
+    </script>
+
+    <script>
+             // تحديد كل فيديوهات المعرض وإبطاء سرعتها
+            const videos = document.querySelectorAll('.video-box video');
+            videos.forEach(video => {
+            video.playbackRate = 0.8;
         });
     </script>
 
