@@ -597,7 +597,8 @@ body {
     }
 }
 
-/* ===== سيطرة مطلقة على الشريط (Navbar & Header) ===== */
+
+/* إعدادات الهيدر الثابت الأساسية */
 .header {
     position: fixed !important;
     top: 0 !important;
@@ -605,14 +606,33 @@ body {
     width: 100% !important;
     z-index: 9999 !important;
     background-color: #2c3e50 !important;
+    transition: all 0.3s ease-in-out;
 }
 
-/* شاشات اللابتوب والكمبيوتر الافتراضية */
+/* تأثير السكرول (لما تزل لتحت والـ JS يضيف كلاس scrolled) */
+.header.scrolled {
+    padding: 8px 0 !important;
+    background-color: rgba(44, 62, 80, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header.scrolled .nav-links {
+    display: none !important;
+}
+
+.header.scrolled .nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* مسافة اللابتوب والكمبيوتر الافتراضية للـ Hero */
 .hero {
     padding-top: 140px !important;
 }
 
-/* التنسيق المخصص للموبايل والتحكم في المسافات والشريط */
+/* التنسيق المخصص للموبايل والشاشات الصغيرة */
 @media (max-width: 768px) {
     .nav-container {
         padding: 8px 12px !important;
@@ -624,19 +644,18 @@ body {
     .hero {
         height: auto !important;
         min-height: 80vh !important;
-        padding-top: 180px !important; /* مسافة كافية تمنع تداخل الكلام مع الشريط الثابت */
+        padding-top: 140px !important; /* مسافة مظبوطة على الموبايل */
         padding-bottom: 50px !important;
         background-size: cover !important;
         background-position: center center !important;
     }
-}
 
-/* ===== حل مشكلة نزول ونط الكلمات على الموبايل ===== */
-@media (max-width: 768px) {
     .hero-content h1 {
-        white-space: normal !important; /* السماح للكلمات بالالتفاف الطبيعي عشان ما تطلعش بره الشاشة */
-        font-size: 1.8rem !important;     /* تصغير حجم الخط شوية عشان يتناسب مع عرض الموبايل */
-        line-height: 1.4 !important;      /* مسافة مريحة بين السطور */
+        white-space: normal !important;
+        font-size: 1.8rem !important;
+        line-height: 1.4 !important;
         word-break: normal;
+    }
+}
     }
 }
