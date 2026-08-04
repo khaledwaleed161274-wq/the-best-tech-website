@@ -10,7 +10,7 @@
 
     <header class="header">
         <nav class="navbar">
-            <header class="header">
+            <div class="nav-container">
 
                 <!-- Logo on the far left/right depending on direction -->
                 <a href="en.html" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
@@ -238,30 +238,34 @@
         <p>All rights reserved &copy; 2026 - The Best technology Company for Finishing & Decor</p>
     </footer>
 
-   <script>
+    <!-- JavaScript code for WhatsApp redirect -->
+    <script>
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // منع إعادة تحميل الصفحة
+            e.preventDefault();
 
-            // استخراج القيم المدخلة
             const name = document.getElementById('clientName').value;
             const phone = document.getElementById('clientPhone').value;
             const service = document.getElementById('clientService').value;
             const message = document.getElementById('clientMessage').value;
 
-            // رقم الواتساب الخاص بك (تأكد من كتابة الرقم بالكود الدولي الصحيح بدون علامة +)
             const myPhoneNumber = "201144447012"; 
 
-            // صياغة نص الرسالة
-            const whatsappMessage = `*طلب مقايسة جديدة من موقع The Best*%0a` +
+            const whatsappMessage = `*New Quote Request from Website*%0a` +
                                     `----------------------------------%0a` +
-                                    `👤 *الاسم:* ${name}%0a` +
-                                    `📞 *الهاتف:* ${phone}%0a` +
-                                    `🛠 *الخدمة:* ${service}%0a` +
-                                    `💬 *التفاصيل:* ${message}`;
+                                    `👤 *Name:* ${name}%0a` +
+                                    `📞 *Phone:* ${phone}%0a` +
+                                    `🛠 *Service:* ${service}%0a` +
+                                    `💬 *Details:* ${message}`;
 
-            // فتح تطبيق/موقع الواتساب بالرسالة الجاهزة
             const whatsappURL = `https://wa.me/${myPhoneNumber}?text=${whatsappMessage}`;
             window.open(whatsappURL, '_blank');
+        });
+    </script>
+
+    <script>
+        const videos = document.querySelectorAll('.video-box video');
+        videos.forEach(video => {
+            video.playbackRate = 0.8;
         });
     </script>
 
