@@ -265,6 +265,19 @@
             video.playbackRate = 0.8;
         });
     </script>
+    <!-- كود JavaScript للتحكم في الهيدر عند السكرول -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
 
 </body>
 </html>
