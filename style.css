@@ -610,3 +610,108 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+/* ==========================================
+   إعدادات التجاوب الشاملة للشاشات الصغيرة والموبايل
+   ========================================== */
+@media (max-width: 768px) {
+    /* تصحيح الحاوية العامة عشان تملا الشاشة بمسافات أمان مظبوطة */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+
+    /* ضبط شريط التنقل (Navbar) للموبايل */
+    .nav-container {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* تعديل مسافة قسم الـ Hero فوق عشان النافبار في الموبايل بيبقى أطول (متعدد السطور) */
+    .hero {
+        padding-top: 220px !important;
+        min-height: 75vh !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem !important;
+        line-height: 1.4;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* شبكة الخدمات تظهر كارت تحت كارت (Column واحد) */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* المعرض والفيديوهات تملى الشاشة بشكل منسق */
+    .video-container, 
+    .my-gallery {
+        gap: 20px;
+    }
+
+    .video-box, 
+    .photo-item {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .video-box video, 
+    .photo-item img {
+        height: 240px;
+    }
+
+    /* نموذج التواصل يتاقلم مع عرض شاشة الموبايل */
+    .contact-container,
+    .about-content {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+}
+
+/* شاشات الموبايلات الصغيرة جداً (أقل من 480px) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+}
