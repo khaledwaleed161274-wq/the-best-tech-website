@@ -614,9 +614,10 @@ body {
     }
 }
 
+/* ===== تنسيق الـ Hero للشاشات الكبيرة ===== */
 .hero {
     position: relative;
-    padding-top: 160px; /* زودنا المسافة من فوق عشان النافبار الثابت */
+    padding-top: 120px; /* مسافة مناسبة للنافبار الأساسي */
     min-height: 85vh;
     background: url('hero-bg.jpg') no-repeat center top / cover;
     display: flex;
@@ -626,16 +627,18 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+/* ===== التجاوب مع شاشات الموبايل (Responsive Design) ===== */
 @media (max-width: 768px) {
-    /* تصحيح الحاوية */
+    /* تصحيح الحاوية العامة */
     .container {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 15px !important;
     }
 
-    /* ضبط النافبار عشان يكون مضغوط ومرتب ومنسق في شاشات الموبايل الصغيرة */
-    .header {
+    /* ضبط النافبار للموبايل (مستخدمن .navbar عشان يتطابق مع الـ HTML) */
+    .navbar {
         position: fixed;
         top: 0;
         left: 0;
@@ -644,7 +647,7 @@ body {
 
     .nav-container {
         padding: 8px 12px;
-        flex-direction: row; /* نخليهم جنب بعض عشان المساحة */
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
@@ -655,12 +658,13 @@ body {
         font-size: 18px;
     }
 
+    /* اللينكات تنزل في سطر لوحدها تحت بشكل شيك */
     .nav-links {
         gap: 10px;
-        order: 3; /* ننزل اللينكات تحت في سطر صغير */
+        order: 3; 
         width: 100%;
         justify-content: center;
-        padding-top: 5px;
+        padding-top: 6px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -683,9 +687,9 @@ body {
         font-size: 11px;
     }
 
-    /* مساحة الـ Hero تتظبط بدقة عشان مفيش حاجة تغطي الكلام */
+    /* مساحة الـ Hero على الموبايل عشان النافبار أبو سطرين ما يغطيش الكلام */
     .hero {
-        padding-top: 150px !important; /* مساحة مناسبة جداً للنافبار المضغوط الجديد */
+        padding-top: 160px !important; 
         min-height: 75vh !important;
         padding-left: 15px;
         padding-right: 15px;
@@ -734,5 +738,7 @@ body {
     .about-content {
         padding: 20px 15px;
         margin: 0 10px;
+    }
+}
     }
 }
