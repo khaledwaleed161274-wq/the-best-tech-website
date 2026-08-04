@@ -596,45 +596,42 @@ body {
         margin: 0 10px;
     }
 }
-
 /* ==========================================
-   إصلاح نهائي ومرتب للنافبار على الموبايل
+   إصلاح نهائي وصارم للهيدر على الموبايل
    ========================================== */
-
-/* ==========================================
-   التنسيق النهائي للهيدر والتجاوب على الموبايل
-   ========================================== */
-
 @media (max-width: 768px) {
-    /* تظبيط الحاوية وتوزيع العناصر بمسافات مريحة */
-    .nav-container {
-        padding: 10px 15px !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    /* إخفاء اللينكات الكثيرة على الموبايل عشان الشاشة تبقى نظيفة ومش زحمة */
-    .nav-links {
+    /* إخفاء القائمة الطويلة تماماً على الموبايل لتوفير المساحة */
+    .header .nav-links {
         display: none !important;
     }
 
-    /* تظبيط أزرار الإجراءات والترجمة واللوجو لتكون في أسطر متناسقة */
-    .nav-actions {
+    /* ترتيب حاوية النافبار: اللوجو في جهة وزرار المقاييس في الجهة المقابلة */
+    .header .nav-container {
         display: flex !important;
-        align-items: center;
-        gap: 8px;
+        flex-direction: row-reverse !important; /* بيعكس الاتجاه عشان اللوجو ييجي يمين والزرار شمال */
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
     }
 
-    /* ضبط حجم زر اطلب المقاييس عشان يتناسب مع شاشة الموبايل من غير ما يخرج بره */
-    .nav-actions .nav-cta, 
-    .nav-actions .btn-cta {
-        padding: 8px 12px !important;
-        font-size: 0.85rem !important;
+    /* ضبط أزرار الإجراءات والترجمة */
+    .header .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    /* تصغير حجم زر اطلب المقاييس شوية عشان ما يخرجش بره الحدود */
+    .header .nav-actions .nav-cta, 
+    .header .nav-actions .btn-cta,
+    .header .nav-actions a {
+        padding: 6px 10px !important;
+        font-size: 0.8rem !important;
         white-space: nowrap !important;
     }
 
-    /* ضبط مسافة قسم الـ Hero للموبايل */
+    /* ضبط مسافة قسم الـ Hero عشان الكلام يبعد عن الهيدر الثابت */
     .hero {
         padding-top: 130px !important;
         min-height: 80vh !important;
