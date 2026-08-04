@@ -50,7 +50,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== تنسيق الـ Navbar الاحترافي ===== */
 .navbar {
     width: 100%;
     background: transparent;
@@ -599,129 +598,74 @@ body {
     }
 }
 
-/* ===== تنسيق الـ Hero للشاشات الكبيرة ===== */
+/* حل مشكلة تداخل الـ Navbar الثابت مع محتوى الصفحة */
 .hero {
-    position: relative;
-    padding-top: 160px; /* زودنا المسافة من فوق عشان النافبار الثابت */
-    min-height: 85vh;
-    background: url('hero-bg.jpg') no-repeat center top / cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 180px !important; /* بتزق محتوى الـ Hero لتحت عشان ما يتغطاش بالـ Navbar */
+    height: auto !important;       /* عشان الـ height الـ 100vh ما يعوجش المحتوى لو زاد */
+    min-height: 100vh;
 }
 
+/* ===== كود إجباري لتنظيم النافبار على الموبايل ===== */
 @media (max-width: 768px) {
-    /* تصحيح الحاوية */
-    .container {
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
         width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 15px !important;
-    }
-
-    /* ضبط النافبار عشان يكون مضغوط ومرتب ومنسق في شاشات الموبايل الصغيرة */
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+        background: rgba(30, 39, 46, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        z-index: 9999 !important;
     }
 
     .nav-container {
-        padding: 8px 12px;
-        flex-direction: row; /* نخليهم جنب بعض عشان المساحة */
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    .nav-links {
-        gap: 10px;
-        order: 3; /* ننزل اللينكات تحت في سطر صغير */
-        width: 100%;
-        justify-content: center;
-        padding-top: 5px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-links li a {
-       font-size: 12px;
-    }
-
-    .nav-actions {
-        gap: 8px;
-        order: 2;
-    }
-
-    .nav-actions .nav-cta {
-        padding: 6px 14px;
-        font-size: 11px;
-    }
-
-    .lang-btn {
-        padding: 4px 10px;
-        font-size: 11px;
-    }
-
-    /* مساحة الـ Hero تتظبط بدقة عشان مفيش حاجة تغطي الكلام */
-    .hero {
-        padding-top: 150px !important; /* مساحة مناسبة جداً للنافبار المضغوط الجديد */
-        min-height: 75vh !important;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.6rem !important;
-        line-height: 1.3;
-    }
-
-    .hero-content p {
-
-        font-size: 0.9rem !important;
-        margin-bottom: 20px;
-    }
-    
-    .hero-btns {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .hero-btns .btn {
-        width: 100%;
-        padding: 10px 20px;
-        font-size: 0.95rem;
-        text-align: center;
-    }
-
-    /* باقي الأقسام للموبايل */
-    .services-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
-    .video-box, 
-    .photo-item {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
         width: 100% !important;
     }
 
-    .video-box video, 
-    .photo-item img {
-        height: 220px;
+    .logo {
+        font-size: 18px !important;
+        order: 1 !important;
     }
 
-
-
-    .contact-container,
-    .about-content {
-        padding: 20px 15px;
-        margin: 0 10px;
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        order: 2 !important;
     }
+
+    .nav-actions .nav-cta {
+        padding: 6px 12px !important;
+        font-size: 11px !important;
+    }
+
+    .lang-btn {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        order: 3 !important;
+        margin-top: 8px !important;
+        padding-top: 8px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+        list-style: none !important;
+    }
+
+    .nav-links li a {
+        font-size: 13px !important;
+    }
+
+    .hero {
+        padding-top: 170px !important;
+    }
+}
