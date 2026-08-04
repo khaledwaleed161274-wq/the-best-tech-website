@@ -597,50 +597,46 @@ body {
     }
 }
 /* ==========================================
-   إصلاح نهائي وصارم للهيدر على الموبايل
+   الحل الجذري والنهائي للهيدر على الموبايل
    ========================================== */
 @media (max-width: 768px) {
-    /* إخفاء القائمة الطويلة تماماً على الموبايل لتوفير المساحة */
-    .header .nav-links {
+    /* 1. إخفاء الروابط تماماً ومنع ظهورها */
+    .header .nav-links,
+    .navbar .nav-links {
         display: none !important;
     }
 
-    /* ترتيب حاوية النافبار: اللوجو في جهة وزرار المقاييس في الجهة المقابلة */
-    .header .nav-container {
+    /* 2. إجبار الحاوية على الترتيب السليم (لوجو يمين وزرار شمال) */
+    .header .nav-container,
+    .navbar .nav-container {
         display: flex !important;
-        flex-direction: row-reverse !important; /* بيعكس الاتجاه عشان اللوجو ييجي يمين والزرار شمال */
+        flex-direction: row-reverse !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 10px 15px !important;
         width: 100% !important;
+        padding: 5px 10px !important;
+        box-sizing: border-box !important;
     }
 
-    /* ضبط أزرار الإجراءات والترجمة */
+    /* 3. تثبيت مكان الأزرار واللوجو بمنع أي تداخل */
     .header .nav-actions {
         display: flex !important;
         align-items: center !important;
-        gap: 6px !important;
+        gap: 5px !important;
+        flex-shrink: 0 !important;
     }
 
-    /* تصغير حجم زر اطلب المقاييس شوية عشان ما يخرجش بره الحدود */
+    /* 4. تصغير حجم زر "اطلب المقاييس" عشان يركب مظبوط */
+    .header .nav-actions a,
     .header .nav-actions .nav-cta, 
-    .header .nav-actions .btn-cta,
-    .header .nav-actions a {
-        padding: 6px 10px !important;
-        font-size: 0.8rem !important;
+    .header .nav-actions .btn-cta {
+        padding: 5px 8px !important;
+        font-size: 0.75rem !important;
         white-space: nowrap !important;
     }
 
-    /* ضبط مسافة قسم الـ Hero عشان الكلام يبعد عن الهيدر الثابت */
+    /* 5. ضبط مسافة الهيرو عشان مايدخلش تحت الهيدر */
     .hero {
-        padding-top: 130px !important;
-        min-height: 80vh !important;
-        height: auto !important;
-    }
-
-    .hero-content h1 {
-        white-space: normal !important;
-        font-size: 1.8rem !important;
-        line-height: 1.4 !important;
+        padding-top: 120px !important;
     }
 }
