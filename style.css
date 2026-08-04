@@ -524,7 +524,7 @@ body {
    تعديلات التجاوب الكاملة للشاشات الصغيرة 
    ========================================== */
 @media (max-width: 768px) {
-    /* تصحيع حجم الحاوية العامة عشان تملى شاشة الموبايل بمسافات أمان مظبوطة */
+    /* تصحيح حجم الحاوية العامة عشان تملى شاشة الموبايل بمسافات أمان مظبوطة */
     .container {
         max-width: 100% !important;
         padding: 0 15px !important;
@@ -548,7 +548,14 @@ body {
         justify-content: center;
     }
 
-    /* قسم الـ Hero (الرئيسية) */
+    /* قسم الـ Hero (الرئيسية) خصيصاً للموبايل عشان يتناسب مع حجم النافبار الكبير */
+    .hero {
+        padding-top: 220px !important; /* مسافة كافية عشان الكلام مايدخلش جوه النافبار */
+        min-height: 70vh !important;
+        background-size: cover !important; /* بتخلي الصورة تملى الخلفية بشكل متناسق ومحترم */
+        background-position: center center !important;
+    }
+
     .hero-content h1 {
         font-size: 2rem !important;
     }
@@ -581,14 +588,14 @@ body {
 
     .video-box, 
     .photo-item {
-        width: 100% !important; /* بتخلي كروت الصور والفيديوهات تاخد عرض الشاشة بالكامل بشكل سلس */
+        width: 100% !important;
         max-width: 350px;
         margin: 0 auto;
     }
 
     .video-box video, 
     .photo-item img {
-        height: 250px; /* تصغير الارتفاع شوية عشان يناسب شاشة الموبايل القصيرة */
+        height: 250px;
     }
 
     /* نموذج التواصل */
@@ -598,18 +605,14 @@ body {
     }
 }
 
+/* ==========================================
+   إعدادات قسم الـ Hero لشاشات اللاب توب والكمبيوتر 
+   ========================================== */
 .hero {
-    /* المسافة بين النافبار وبداية المحتوى */
     padding-top: 150px !important; 
-    
-    /* ارتفاع القسم (بيخلي الصورة تاخد 85% من طول شاشة الموبايل) */
     min-height: 85vh !important;
-    
-    /* إعدادات الصورة الأساسية */
-    background-image: url('hero-bg.jpg') !important; /* تأكد من الاسم */
+    background-image: url('hero-bg.jpg') !important;
     background-repeat: no-repeat !important;
-    background-position: center top !important; /* بنثبت الصورة من فوق */
-    
-    /* الحل السحري والشيك: */
-    background-size: contain !important; 
+    background-position: center top !important;
+    background-size: cover !important;
 }
