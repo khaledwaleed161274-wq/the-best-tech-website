@@ -596,46 +596,48 @@ body {
         margin: 0 10px;
     }
 }
+
 /* ==========================================
-   الحل الجذري والنهائي للهيدر على الموبايل
+   الحل الهندسي الأخير والنهائي للموبايل (Grid Clean)
    ========================================== */
 @media (max-width: 768px) {
-    /* 1. إخفاء الروابط تماماً ومنع ظهورها */
+    /* 1. إخفاء الروابط تماماً بدون أي نقاش */
     .header .nav-links,
     .navbar .nav-links {
         display: none !important;
     }
 
-    /* 2. إجبار الحاوية على الترتيب السليم (لوجو يمين وزرار شمال) */
+    /* 2. إلغاء الـ Flex القديم وتحويل الحاوية لـ Grid من عمودين (لوجو يمين، أزرار شمال) */
     .header .nav-container,
     .navbar .nav-container {
-        display: flex !important;
-        flex-direction: row-reverse !important;
+        display: grid !important;
+        grid-template-columns: auto auto !important;
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
-        padding: 5px 10px !important;
+        padding: 8px 12px !important;
         box-sizing: border-box !important;
     }
 
-    /* 3. تثبيت مكان الأزرار واللوجو بمنع أي تداخل */
+    /* 3. تثبيت صندوق الأزرار */
     .header .nav-actions {
         display: flex !important;
         align-items: center !important;
-        gap: 5px !important;
-        flex-shrink: 0 !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
     }
 
-    /* 4. تصغير حجم زر "اطلب المقاييس" عشان يركب مظبوط */
+    /* 4. تصغير زر المقاييس ليكون متناسق ومن غير ما يخرج بره الشاشة */
     .header .nav-actions a,
     .header .nav-actions .nav-cta, 
     .header .nav-actions .btn-cta {
-        padding: 5px 8px !important;
+        padding: 6px 10px !important;
         font-size: 0.75rem !important;
         white-space: nowrap !important;
+        display: inline-block !important;
     }
 
-    /* 5. ضبط مسافة الهيرو عشان مايدخلش تحت الهيدر */
+    /* 5. ضبط مسافة الهيرو */
     .hero {
         padding-top: 120px !important;
     }
