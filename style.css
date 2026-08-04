@@ -599,12 +599,17 @@ body {
 }
 
 .hero {
-    padding-top: 130px !important;         /* المسافة فوق */
-    min-height: 90vh;                      /* ارتفاع القسم */
-    background-image: url('hero-bg.jpg') !important; /* تأكد من اسم الصورة ومسارها */
+    /* المسافة بين النافبار وبداية المحتوى */
+    padding-top: 150px !important; 
+    
+    /* ارتفاع القسم (بيخلي الصورة تاخد 85% من طول شاشة الموبايل) */
+    min-height: 85vh !important;
+    
+    /* إعدادات الصورة الأساسية */
+    background-image: url('hero-bg.jpg') !important; /* تأكد من الاسم */
     background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-attachment: scroll !important;
-    /* الحل السحري هنا */
-    background-size: 100% 100% !important; 
+    background-position: center top !important; /* بنثبت الصورة من فوق */
+    
+    /* الحل السحري والشيك: */
+    background-size: contain !important; 
 }
